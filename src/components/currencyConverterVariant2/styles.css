@@ -1,0 +1,8 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.buttonSubmit {
+  margin-top: 16px;
+}
