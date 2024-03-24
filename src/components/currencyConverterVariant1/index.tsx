@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useCallback, useEffect, useMemo, useState } from "react";
 import { debounce } from "lodash";
 import type { InputStatus } from "antd/lib/_util/statusUtils";
@@ -158,8 +159,11 @@ export const CurrencyConverterVariant1 = ({ variant }: Props) => {
       />
       {lastInput === "input" && inputsStatus.input.length > 0 && (
         <p>
-          {input.type} range: <span>{COIN_RANGE[input.type].min}</span> -{" "}
-          <span>{COIN_RANGE[input.type].max}</span>
+          {input.type} range:{" "}
+          <span>
+            {(Math.ceil(COIN_RANGE[input.type].min) * 1) / 100}
+          </span>{" "}
+          - <span>{COIN_RANGE[input.type].max}</span>
         </p>
       )}
       {lastInput === "input2" && inputsStatus.input2.length > 0 && (
